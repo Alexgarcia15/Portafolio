@@ -7,243 +7,67 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0f172a;
-      color: #ffffff;
-    }
-
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: #0f172a;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #1e293b;
-    }
-
-    .nav-logo {
-      font-size: 22px;
-      font-weight: 900;
-      color: #22c55e;
-    }
-
-    .nav-links a {
-      color: #94a3b8;
-      text-decoration: none;
-      margin-left: 30px;
-      font-size: 15px;
-      transition: color 0.3s;
-    }
-
+    body { font-family: 'Segoe UI', sans-serif; background-color: #0f172a; color: #ffffff; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #0f172a; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1e293b; }
+    .nav-logo { font-size: 22px; font-weight: 900; color: #22c55e; }
+    .nav-links a { color: #94a3b8; text-decoration: none; margin-left: 30px; font-size: 15px; transition: color 0.3s; }
     .nav-links a:hover { color: #22c55e; }
-
-    /* MARQUESINA */
-    .marquesina {
-      background-color: #22c55e;
-      padding: 10px 0;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .marquesina-inner {
-      display: inline-block;
-      animation: mover 20s linear infinite;
-    }
-
-    .marquesina-inner span {
-      font-size: 16px;
-      font-weight: 700;
-      color: #0f172a;
-      padding: 0 40px;
-    }
-
-    @keyframes mover {
-      0% { transform: translateX(100vw); }
-      100% { transform: translateX(-100%); }
-    }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 80px 20px 60px;
-    }
-
-    .hero h1 {
-      font-size: 52px;
-      font-weight: 900;
-      color: #ffffff;
-      margin-bottom: 10px;
-    }
-
+    .marquesina { background-color: #22c55e; padding: 10px 0; overflow: hidden; white-space: nowrap; }
+    .marquesina-inner { display: inline-block; animation: mover 20s linear infinite; }
+    .marquesina-inner span { font-size: 16px; font-weight: 700; color: #0f172a; padding: 0 40px; }
+    @keyframes mover { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
+    .hero { text-align: center; padding: 80px 20px 60px; }
+    .hero h1 { font-size: 52px; font-weight: 900; color: #ffffff; margin-bottom: 10px; }
     .hero h1 span { color: #22c55e; }
-
-    .hero p {
-      font-size: 18px;
-      color: #94a3b8;
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    .hero-btns a {
-      display: inline-block;
-      margin: 8px;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 15px;
-      transition: all 0.3s;
-    }
-
-    .btn-verde {
-      background-color: #22c55e;
-      color: #0f172a;
-    }
-
-    .btn-outline {
-      border: 2px solid #22c55e;
-      color: #22c55e;
-    }
-
+    .hero p { font-size: 18px; color: #94a3b8; max-width: 600px; margin: 0 auto 30px; }
+    .hero-btns a { display: inline-block; margin: 8px; padding: 14px 28px; border-radius: 10px; font-weight: 700; text-decoration: none; font-size: 15px; transition: all 0.3s; }
+    .btn-verde { background-color: #22c55e; color: #0f172a; }
+    .btn-outline { border: 2px solid #22c55e; color: #22c55e; }
     .btn-verde:hover { background-color: #16a34a; }
     .btn-outline:hover { background-color: #22c55e; color: #0f172a; }
-
-    /* PROYECTOS */
-    #proyectos {
-      padding: 60px 40px;
-    }
-
-    #proyectos h2 {
-      text-align: center;
-      font-size: 32px;
-      font-weight: 900;
-      margin-bottom: 40px;
-      color: #22c55e;
-    }
-
-    .proyectos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .proyecto-card {
-      background-color: #1e293b;
-      border-radius: 16px;
-      padding: 28px;
-      border: 1px solid #334155;
-      transition: transform 0.3s, border-color 0.3s;
-    }
-
-    .proyecto-card:hover {
-      transform: translateY(-6px);
-      border-color: #22c55e;
-    }
-
-    .proyecto-card h3 {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-
-    .proyecto-card p {
-      color: #94a3b8;
-      font-size: 14px;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-
-    .proyecto-card a {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #22c55e;
-      color: #0f172a;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 14px;
-      transition: background-color 0.3s;
-    }
-
+    #proyectos { padding: 60px 40px; }
+    #proyectos h2 { text-align: center; font-size: 32px; font-weight: 900; margin-bottom: 40px; color: #22c55e; }
+    .proyectos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .proyecto-card { background-color: #1e293b; border-radius: 16px; padding: 28px; border: 1px solid #334155; transition: transform 0.3s, border-color 0.3s; }
+    .proyecto-card:hover { transform: translateY(-6px); border-color: #22c55e; }
+    .proyecto-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; color: #ffffff; }
+    .proyecto-card p { color: #94a3b8; font-size: 14px; margin-bottom: 20px; line-height: 1.6; }
+    .proyecto-card a { display: inline-block; padding: 10px 20px; background-color: #22c55e; color: #0f172a; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 14px; transition: background-color 0.3s; }
     .proyecto-card a:hover { background-color: #16a34a; }
-
-    /* CONTACTO */
-    #contacto {
-      background-color: #1e293b;
-      padding: 60px 40px;
-      text-align: center;
-    }
-
-    #contacto h2 {
-      font-size: 32px;
-      font-weight: 900;
-      color: #22c55e;
-      margin-bottom: 20px;
-    }
-
-    #contacto p {
-      color: #94a3b8;
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    #contacto a {
-      color: #22c55e;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    /* FOOTER */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #0f172a;
-      color: #475569;
-      font-size: 13px;
-      border-top: 1px solid #1e293b;
-    }
+    #contacto { background-color: #1e293b; padding: 60px 40px; text-align: center; }
+    #contacto h2 { font-size: 32px; font-weight: 900; color: #22c55e; margin-bottom: 20px; }
+    #contacto p { color: #94a3b8; font-size: 16px; margin-bottom: 10px; }
+    #contacto a { color: #22c55e; text-decoration: none; font-weight: 700; }
+    footer { text-align: center; padding: 20px; background-color: #0f172a; color: #475569; font-size: 13px; border-top: 1px solid #1e293b; }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav>
     <div class="nav-logo">HG</div>
     <div class="nav-links">
-      <a href="https://alexgarcia15.github.io/Market__Venta/"="#proyectos">Proyectos</a>
-      <a href="https://alexgarcia15.github.io/Market__Venta/"="#contacto">Contacto</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
     </div>
   </nav>
 
-  <!-- MARQUESINA -->
   <div class="marquesina">
     <div class="marquesina-inner">
-      <span>Hector Garcia Programador de Aplicaciones y Paginas Web</span>
-      <span>Hector Garcia Programador de Aplicaciones y Paginas Web</span>
-      <span>Hector Garcia Programador de Aplicaciones y Paginas Web</span>
+      <span>Hector Garcia — Programador de Aplicaciones y Paginas Web</span>
+      <span>Hector Garcia — Programador de Aplicaciones y Paginas Web</span>
+      <span>Hector Garcia — Programador de Aplicaciones y Paginas Web</span>
     </div>
   </div>
 
-  <!-- HERO -->
   <section class="hero">
-  <h1>Hector <span>Garcia</span></h1>
-  <p>Desarrollador de Aplicaciones, Sitios Web, Paginas Web y Tiendas Online.</p>
-  <div class="hero-btns">
-    <a href="#proyectos" class="btn-verde">Ver Proyectos</a>
-    <a href="#contacto" class="btn-outline">Contactar</a>
-  </div>
-</section>
+    <h1>Hector <span>Garcia</span></h1>
+    <p>Desarrollador de Aplicaciones, Sitios Web, Paginas Web y Tiendas Online.</p>
+    <div class="hero-btns">
+      <a href="#proyectos" class="btn-verde">Ver Proyectos</a>
+      <a href="#contacto" class="btn-outline">Contactar</a>
+    </div>
+  </section>
 
-  <!-- PROYECTOS -->
   <section id="proyectos">
     <h2>Mis Proyectos</h2>
     <div class="proyectos-grid">
@@ -251,43 +75,39 @@
       <div class="proyecto-card">
         <h3>Lilia Store</h3>
         <p>Tienda online de moda y hogar con catalogo de productos y contacto directo por WhatsApp.</p>
-        <a href="https://alexgarcia15.github.io/Market__Venta/"="https://alexgarcia15.github.io/Lilia-Store/" target="_blank">Ver Proyecto</a>
+        <a href="https://alexgarcia15.github.io/Lilia-Store/" target="_blank">Ver Proyecto</a>
       </div>
 
       <div class="proyecto-card">
         <h3>App Camiones</h3>
         <p>Aplicacion movil para monitoreo GPS de flota de camiones en tiempo real con React Native.</p>
-        <a href="https://alexgarcia15.github.io/Market__Venta/"="https://github.com/Alexgarcia15/AppCamiones" target="_blank">Ver Proyecto</a>
+        <a href="https://github.com/Alexgarcia15/AppCamiones" target="_blank">Ver Proyecto</a>
       </div>
 
       <div class="proyecto-card">
         <h3>Taller Cajebola</h3>
         <p>Sistema de cotizacion para taller mecanico con gestion de servicios y presupuestos.</p>
-        <a href="https://alexgarcia15.github.io/Market__Venta/"="https://alexgarcia15.github.io/TallerCajebola/" target="_blank">Ver Proyecto</a>
+        <a href="https://alexgarcia15.github.io/TallerCajebola/" target="_blank">Ver Proyecto</a>
       </div>
 
       <div class="proyecto-card">
         <h3>Market Venta</h3>
         <p>Plataforma de marketplace para compra y venta de productos con interfaz moderna.</p>
-        <a href="https://alexgarcia15.github.io/Market__Venta/">Ver Proyecto</a>
+        <a href="https://alexgarcia15.github.io/Market__Venta/" target="_blank">Ver Proyecto</a>
       </div>
 
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section id="contacto">
     <h2>Contacto</h2>
-    <p>Email: <a href="https://alexgarcia15.github.io/Market__Venta/"="mailto:hectorramon001@gmail.com">hectorramon001@gmail.com</a></p>
-    <p>Telefono: <a href="https://alexgarcia15.github.io/Market__Venta/"="tel:8295581414">829-558-1414</a></p>
+    <p>Email: <a href="mailto:hectorramon001@gmail.com">hectorramon001@gmail.com</a></p>
+    <p>Telefono: <a href="tel:8295581414">829-558-1414</a></p>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <p>Â© 2026 Hector Garcia. Todos los derechos reservados.</p>
+    <p>© 2026 Hector Garcia. Todos los derechos reservados.</p>
   </footer>
 
 </body>
 </html>
-
-
